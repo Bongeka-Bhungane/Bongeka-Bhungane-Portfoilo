@@ -185,7 +185,91 @@ body,
   transform: scale(1.05);
 }
 
+.cv-page {
+  background-color: #0a0a0a;
+  color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  font-family: 'Roboto', sans-serif;
+}
 
+.cv-container {
+  max-width: 700px;
+  text-align: center;
+  background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(255, 110, 199, 0.2);
+}
+
+.cv-title {
+  color: #ff6ec7;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(255, 110, 199, 0.4);
+}
+
+.cv-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.highlight {
+  color: #ff6ec7;
+  font-weight: 600;
+}
+
+.cv-info p {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.cv-info a {
+  color: #ff6ec7;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.cv-info a:hover {
+  color: #ff4aa0;
+}
+
+/* Download Button */
+.cv-download-btn {
+  display: inline-block;
+  margin-top: 25px;
+  background-color: #ff6ec7;
+  color: #0a0a0a;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cv-download-btn:hover {
+  background-color: #ff4aa0;
+  transform: scale(1.05);
+}
+
+.cv-back-btn {
+  display: inline-block;
+  margin-top: 20px;
+  color: #ff6ec7;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cv-back-btn:hover {
+  color: #ff4aa0;
+  transform: translateY(-2px);
+}
 
 /* footer.css */
 
@@ -239,6 +323,21 @@ body,
   .list {
     flex-direction: column;
     gap: 0.8rem;
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .cv-container {
+    padding: 30px 20px;
+  }
+
+  .cv-title {
+    font-size: 2rem;
+  }
+
+  .cv-text {
+    font-size: 1rem;
   }
 }
 
