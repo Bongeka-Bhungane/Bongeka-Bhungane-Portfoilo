@@ -17,7 +17,7 @@ export default function Nav() {
           Projects
         </a>
         <Link to="/cv" className="nav-link">
-          CV
+          About
         </Link>
         <Link to="/contactus" className="nav-link">
           Contact us

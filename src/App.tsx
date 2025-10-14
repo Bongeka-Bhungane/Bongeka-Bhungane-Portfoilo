@@ -1,7 +1,6 @@
 import './App.css'
 import Home from './pages/Home'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Projects from './pages/Projects';
 import Cv from './pages/Cv';
 import ContactUs from './pages/ContactUs';
 import Privacy from './pages/Privacy';
@@ -14,7 +13,6 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Home/>}/>
-      <Route path='/projects' element={<Projects/>}/>
       <Route path='/cv' element={<Cv/>}/>
       <Route path='/contactus' element={<ContactUs/>}/>
       <Route path='/privacy' element={<Privacy/>}/>

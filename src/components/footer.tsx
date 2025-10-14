@@ -11,7 +11,7 @@ export default function Footer() {
           Projects
         </Link>
         <Link to="/cv" className="">
-          Cv
+          About
         </Link>
         <Link to="/contactus" className="">
           Contact us

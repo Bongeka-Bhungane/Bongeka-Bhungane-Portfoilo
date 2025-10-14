@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 export default function Cv() {
   return (
     <div className="cv-page">
+      {/* Back Button */}
+      <Link to="/" className="cv-back-btn">
+        ← Back to Home
+      </Link>
+      
       <div className="cv-container">
         <h1 className="cv-title">About Me</h1>
         <p className="cv-text">
@@ -35,14 +40,13 @@ export default function Cv() {
           </p>
         </div>
 
-        <a href="/Bongeka_Bhungane_CV.pdf" download className="cv-download-btn">
+        <a
+          href="/src/assets/Bongeka_Bhungane _ CV.pdf"
+          download
+          className="cv-download-btn"
+        >
           Download My CV
         </a>
-
-        {/* Back Button */}
-        <Link to="/" className="cv-back-btn">
-          ← Back to Home
-        </Link>
       </div>
     </div>
   );
