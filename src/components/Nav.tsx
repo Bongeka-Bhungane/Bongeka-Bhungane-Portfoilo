@@ -20,7 +20,7 @@ export default function Nav() {
           CV
         </Link>
         <Link to="/contactus" className="nav-link">
-          Contact
+          Contact us
         </Link>
         <Link to="/privacy" className="nav-link">
           Privacy
