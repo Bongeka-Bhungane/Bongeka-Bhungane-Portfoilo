@@ -1,11 +1,25 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Nav() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
   return (
     <nav className="nav">
       <h2 className="nav-logo">Bongeka Bhungane</h2>
-      <div className="nav-links">
-        <Link to="/" className="nav-link">
+
+      {/* Hamburger Icon */}
+      <div className="hamburger" onClick={toggleMenu}>
+        <div className={`bar ${isOpen ? "open" : ""}`}></div>
+        <div className={`bar ${isOpen ? "open" : ""}`}></div>
+        <div className={`bar ${isOpen ? "open" : ""}`}></div>
+      </div>
+
+      {/* Links */}
+      <div className={`nav-links ${isOpen ? "active" : ""}`}>
+        <Link to="/" className="nav-link" onClick={() => setIsOpen(false)}>
           Home
         </Link>
         <a
@@ -13,16 +27,25 @@ export default function Nav() {
           target="_blank"
           rel="noopener noreferrer"
           className="nav-link"
+          onClick={() => setIsOpen(false)}
         >
           Projects
         </a>
-        <Link to="/cv" className="nav-link">
-          About
+        <Link to="/cv" className="nav-link" onClick={() => setIsOpen(false)}>
+          CV
         </Link>
-        <Link to="/contactus" className="nav-link">
-          Contact us
-        </Link>
-        <Link to="/privacy" className="nav-link">
+        <a
+          href="mailto:bongekabhungane@gmail.com?subject=Hello%20Bongeka"
+          className="nav-link"
+          onClick={() => setIsOpen(false)}
+        >
+          Contact
+        </a>
+        <Link
+          to="/privacy"
+          className="nav-link"
+          onClick={() => setIsOpen(false)}
+        >
           Privacy
         </Link>
       </div>
