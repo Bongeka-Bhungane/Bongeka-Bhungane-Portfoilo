@@ -35,9 +35,8 @@ export default function Nav() {
           CV
         </Link>
         <a
-          href="mailto:bongekabhungane@gmail.com?subject=Hello%20Bongeka"
+          href="/contactus"
           className="nav-link"
-          onClick={() => setIsOpen(false)}
         >
           Contact
         </a>

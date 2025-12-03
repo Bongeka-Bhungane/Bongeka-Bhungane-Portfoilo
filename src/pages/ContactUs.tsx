@@ -1,71 +1,53 @@
-import React, { useRef, useState } from "react";
-import emailjs from "emailjs-com";
 import { Link } from "react-router-dom";
 
 export default function ContactUs() {
-  const form = useRef<HTMLFormElement>(null);
-  const [message, setMessage] = useState("");
-
-  const sendEmail = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!form.current) return;
-
-    emailjs
-      .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        form.current,
-        "YOUR_PUBLIC_KEY"
-      )
-      .then(
-        () => {
-          setMessage("✅ Message sent successfully!");
-          form.current?.reset();
-        },
-        () => {
-          setMessage("❌ Failed to send message. Please try again.");
-        }
-      );
-  };
-
   return (
-    <div className="contact-container">
-      <h1 className="contact-title">Let's Connect 🚀</h1>
-      <p className="contact-subtitle">
-        Have a question or opportunity? Drop me a message below.
-      </p>
-
-      <form ref={form} onSubmit={sendEmail} className="contact-form">
-        <input
-          type="text"
-          name="user_name"
-          placeholder="Your Name"
-          required
-          className="contact-input"
-        />
-        <input
-          type="email"
-          name="user_email"
-          placeholder="Your Email"
-          required
-          className="contact-input"
-        />
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          required
-          className="contact-textarea"
-        />
-        <button type="submit" className="contact-btn">
-          Send Message
-        </button>
-      </form>
-
-      {message && <p className="contact-message">{message}</p>}
-
-      <Link to="/" className="back-btn">
-        ⬅ Back to Home
+    <div className="cv-page">
+      {/* Back Button */}
+      <Link to="/" className="cv-back-btn">
+        ← Back to Home
       </Link>
+
+      <div className="cv-container">
+        <h1 className="cv-title">About Me</h1>
+        <p className="cv-text">
+          Hi, I'm <span className="highlight">Bongeka Bhungane</span> — a
+          passionate tech enthusiast and aspiring developer. I enjoy exploring
+          new technologies, building creative digital projects, and continuously
+          improving my coding skills.
+        </p>
+
+        <div className="cv-info">
+          <p>
+            <strong>Email:</strong>{" "}
+            <a href="mailto:angelabhungane@gmail.com">
+              angelabhungane@gmail.com
+            </a>
+          </p>
+          <p>
+            <strong>Phone:</strong>{" "}
+            <a href="tel:+27832964212">+27 83 296 4212</a>
+          </p>
+          <p>
+            <strong>LinkedIn:</strong>{" "}
+            <a
+              href="https://www.linkedin.com/in/bongeka-bhungane-623a6a252/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://www.linkedin.com/in/bongeka-bhungane-623a6a252/
+            </a>
+          </p>
+        </div>
+
+        <a
+          href="/src/assets/Bongeka_Bhungane _ CV.pdf"
+          download
+          className="cv-download-btn"
+        >
+          Download My CV
+        </a>
+      </div>
     </div>
   );
 }
