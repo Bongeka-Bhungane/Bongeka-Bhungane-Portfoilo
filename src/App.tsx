@@ -1,26 +1,21 @@
-import './App.css'
-import Home from './pages/Home'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Cv from './pages/Cv';
-import ContactUs from './pages/ContactUs';
-import Privacy from './pages/Privacy';
-import NotFound from './pages/NotFound';
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Footer from "./components/Footer";
 
 function App() {
-
   return (
-    <>
-    <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/cv' element={<Cv/>}/>
-      <Route path='/contactus' element={<ContactUs/>}/>
-      <Route path='/privacy' element={<Privacy/>}/>
-      <Route path='*' element={<NotFound/>}/> 
-    </Routes>
-    </BrowserRouter>
-    </>
-  )
+    <div className="min-h-screen">
+      <Header />
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;
